@@ -1,12 +1,13 @@
 import { FaClock, FaFlag, FaRocket, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'
 
 const Landing = () => {
   return (
     <>
       <div className='bg-slate-700 w-screen h-screen'>
         {/* Navbar */}
-        <nav className="flex justify-between items-center bg-slate-800 text-white px-6 py-3 w-[80%] m-auto border border-slate-600 rounded-full shadow-md">
+        <nav className="flex justify-between items-center bg-slate-800 text-white px-6 py-3 w-[80%] m-auto border border-slate-600 rounded-full shadow-md relative top-2">
           <h1 className="text-3xl font-extrabold tracking-wider text-slate-100">Flagii</h1>
           <ul className="hidden md:flex space-x-6">
             <li><a href="#" className="hover:text-slate-300 transition duration-300 ease-in-out">Home</a></li>
@@ -20,7 +21,9 @@ const Landing = () => {
           <h1 className='text-white text-3xl text-center md:text-4xl'>
             <span className='text-yellow-400 text-4xl'>Welcome to Flagii where you can</span> discover the capital city of every country.
           </h1>
-          <button className='bg-yellow-400 text-white px-6 py-3 mt-4 rounded-full hover:bg-yellow-300 transition-all duration-300 transform shadow-lg font-bold hover:scale-105'>Get started</button>
+          <Link to='flagii'>
+            <button className='bg-yellow-400 text-white px-6 py-3 mt-4 rounded-full hover:bg-yellow-300 transition-all duration-300 transform shadow-lg font-bold hover:scale-105'>Get started</button>
+          </Link>
         </div>
       </div>
 
@@ -59,33 +62,34 @@ const Landing = () => {
       </section>
 
       {/* Explore Section */}
-      <section id='explore' className='bg-gradient-to-r from-indigo-900 via-slate-800 to-blue-900 h-auto mb-4 flex flex-col md:flex-row items-center justify-center space-x-8 p-6 rounded-lg shadow-xl'>
+      <section id='explore' className='h-auto mb-4 flex flex-col md:flex-row items-center justify-center space-x-8 p-6 rounded-lg shadow-xl'>
         <img
           src="https://flagcdn.com/w320/rw.png"
           alt="Rwandan flag"
           className="h-32 w-auto rounded-lg shadow-2xl transform transition-transform duration-500 hover:scale-110"
         />
-        <div className='text-white text-left max-w-md'>
-          <h2 className='text-4xl font-extrabold mb-3 leading-tight'>
+        <div className='text-gray-900 text-left max-w-md'> {/* Changed text color */}
+          <h2 className='text-4xl font-extrabold mb-3 leading-tight text-center md:text-start'>
             Explore Flags with <span className="text-yellow-400">Flagii</span>
           </h2>
           <p className='text-lg mb-5 text-center md:text-start'>
             Discover the world of flags, culture, and heritage through our amazing app. Show your national pride like never before!
           </p>
           <div className='flex justify-center items-center md:justify-start'>
-            <button className='px-6 py-3 bg-yellow-400 text-slate-800 font-bold rounded-full shadow-lg hover:bg-yellow-300 transform transition-transform duration-300 hover:scale-105'>
-              Get Started
-            </button>
+            <Link to="/flagii">
+              <button className='px-6 py-3 bg-yellow-400 text-white font-bold rounded-full shadow-lg hover:bg-yellow-300 transform transition-transform duration-300 hover:scale-105'>
+                Get Started
+              </button>
+            </Link>
           </div>
         </div>
       </section>
-
       {/* Footer Section */}
       <footer className='bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-900 py-6 mt-8 text-white'>
-        <div className='container mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0'>
+        <div className='container mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 px-4'>
           {/* Logo or App Name */}
           <div className='text-2xl font-bold'>
-            Flagii <span className="text-yellow-400">App</span>
+            Flagii
           </div>
 
           {/* Navigation Links */}
@@ -93,7 +97,6 @@ const Landing = () => {
             <a href="#" className='text-white hover:text-yellow-400 transition duration-300'>Home</a>
             <a href="#explore" className='text-white hover:text-yellow-400 transition duration-300'>Explore</a>
             <a href="#about" className='text-white hover:text-yellow-400 transition duration-300'>About Us</a>
-            <a href="#" className='text-white hover:text-yellow-400 transition duration-300'>Contact</a>
           </div>
 
           {/* Social Media Icons */}
